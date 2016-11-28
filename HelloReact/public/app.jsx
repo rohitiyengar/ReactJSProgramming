@@ -14,9 +14,17 @@ var Greeter = React.createClass({
   },
   onButtonClick: function(e) {
     e.preventDefault(); // Prevents refreshing of page each time form is submitted.
+    var nameRef = this.refs.name;
+    var name = nameRef.value;
+    nameRef.value = '';
+    if(typeof name === 'string' && name.length > 0)
+    {
+      this.setState({
+        name: name //name from state = var name
+      });
+    }
 
-    var name = this.refs.name.value;
-    alert(name);
+    //alert(name);
   },
 
   render: function(){
