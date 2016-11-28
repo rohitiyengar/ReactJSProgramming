@@ -6,7 +6,12 @@ var Greeter = React.createClass({
       message: "This is from the component"
     };
   },
-
+  getInitialState: function()
+  {
+    return{
+      name: this.props.name
+    };
+  },
   onButtonClick: function(e) {
     e.preventDefault(); // Prevents refreshing of page each time form is submitted.
 
@@ -15,7 +20,7 @@ var Greeter = React.createClass({
   },
 
   render: function(){
-    var name = this.props.name;
+    var name = this.state.name;
     var message = this.props.message;
     return (
       //Uncomment and clean up for React.createElement --> babeljs.io/repl
