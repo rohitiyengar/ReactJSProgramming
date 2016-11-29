@@ -23,20 +23,12 @@ var Greeter = React.createClass({
         name: name //name from state = var name
       });
     }
-
-    //alert(name);
   },
 
   render: function(){
     var name = this.state.name;
     var message = this.props.message;
     return (
-      //Uncomment and clean up for React.createElement --> babeljs.io/repl
-    //React.createElement(
-        //'h1',
-        //null,
-        //'Hello Fun'
-      //)
        <div>
          <h1>Hello {name}!</h1>
          <p>{message + '!!'}</p>
