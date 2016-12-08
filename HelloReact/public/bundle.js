@@ -49,57 +49,7 @@
 	var React = __webpack_require__(1);
 	var ReactDOM = __webpack_require__(158);
 	var GreeterMessage = __webpack_require__(159);
-
-	var GreeterForm = React.createClass({
-	    displayName: 'GreeterForm',
-
-	    onFormSubmit: function onFormSubmit(e) {
-	        e.preventDefault();
-	        var update = {};
-	        var name = this.refs.name.value;
-	        var message = this.refs.message.value;
-	        if (name.length > 0) {
-	            this.refs.name.value = '';
-	            update.name = name;
-	        }
-	        if (message.length > 0) {
-	            this.refs.message.value = '';
-	            update.message = message;
-	        }
-	        this.props.onNewData(update);
-	    },
-	    render: function render() {
-	        return React.createElement(
-	            'div',
-	            null,
-	            React.createElement(
-	                'form',
-	                { onSubmit: this.onFormSubmit },
-	                React.createElement(
-	                    'div',
-	                    null,
-	                    React.createElement('input', { type: 'text', ref: 'name', placeholder: 'Enter Name' })
-	                ),
-	                React.createElement('br', null),
-	                React.createElement(
-	                    'div',
-	                    null,
-	                    React.createElement('textarea', { ref: 'message', placeholder: 'Enter Message' })
-	                ),
-	                React.createElement('br', null),
-	                React.createElement(
-	                    'div',
-	                    null,
-	                    React.createElement(
-	                        'button',
-	                        null,
-	                        'Submit'
-	                    )
-	                )
-	            )
-	        );
-	    }
-	});
+	var GreeterForm = __webpack_require__(160);
 
 	var Greeter = React.createClass({
 	    displayName: 'Greeter',
@@ -19856,6 +19806,65 @@
 	    }
 	});
 	module.exports = GreeterMessage;
+
+/***/ },
+/* 160 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var React = __webpack_require__(1);
+	var GreeterForm = React.createClass({
+	    displayName: 'GreeterForm',
+
+	    onFormSubmit: function onFormSubmit(e) {
+	        e.preventDefault();
+	        var update = {};
+	        var name = this.refs.name.value;
+	        var message = this.refs.message.value;
+	        if (name.length > 0) {
+	            this.refs.name.value = '';
+	            update.name = name;
+	        }
+	        if (message.length > 0) {
+	            this.refs.message.value = '';
+	            update.message = message;
+	        }
+	        this.props.onNewData(update);
+	    },
+	    render: function render() {
+	        return React.createElement(
+	            'div',
+	            null,
+	            React.createElement(
+	                'form',
+	                { onSubmit: this.onFormSubmit },
+	                React.createElement(
+	                    'div',
+	                    null,
+	                    React.createElement('input', { type: 'text', ref: 'name', placeholder: 'Enter Name' })
+	                ),
+	                React.createElement('br', null),
+	                React.createElement(
+	                    'div',
+	                    null,
+	                    React.createElement('textarea', { ref: 'message', placeholder: 'Enter Message' })
+	                ),
+	                React.createElement('br', null),
+	                React.createElement(
+	                    'div',
+	                    null,
+	                    React.createElement(
+	                        'button',
+	                        null,
+	                        'Submit'
+	                    )
+	                )
+	            )
+	        );
+	    }
+	});
+	module.exports = GreeterForm;
 
 /***/ }
 /******/ ]);
